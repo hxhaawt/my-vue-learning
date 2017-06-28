@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<aaa>
+		
+		</aaa>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+
+<template id="aaa">
+	<h2>我是aaa-->{{ msg }}</h2>
+	<ccc :m="msg"></ccc>
+</template>
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    data: {
+		        a: 'aaa'
+		    
+		    },
+		    components:{
+		        'aaa':{
+		            data(){
+		                return {
+		                    msg: "我是父组件的数据"
+		                };
+		            },
+		            template: '#aaa',
+			        components:{
+		                'ccc':{
+		                    props:['m'],
+		                    template: "<h2>我是ccc-->{{ m }}</h2>"
+		                }
+			        }
+		        }
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>

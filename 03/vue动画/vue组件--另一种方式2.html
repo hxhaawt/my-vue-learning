@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画 learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    components:{
+		        'my-aaa':{
+		            data(){
+		                return {
+		                    msg: "hello world"
+		                };
+		            },
+			        methods:{
+		                change(){
+		                    this.msg = "good men";
+		                }
+			        },
+		            template: "<strong @click='change'>{{ msg }}</strong>"
+		        }
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>

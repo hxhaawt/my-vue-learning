@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画 learn</title>
+	<link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
+	<style>
+		#box{
+			
+			width: 400px;
+			margin: 0 auto;
+		}
+		#div1{
+			width: 100px;
+			height: 100px;
+			
+			background: #00f;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<input type="button" value="button" @click="toggle">
+		<div id="div1" class="animated" v-show="bSign" transition="bounce"></div>
+
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    data: {
+		        bSign: true
+		    },
+		    methods: {
+		        toggle(){
+		            this.bSign = !this.bSign;
+		        }
+		    },
+		    transitions: {
+		        bounce: {
+//		            enterClass: "zoomInLeft",
+//			        leaveClass: "zoomOutRight"
+                    enterClass: "flash",
+                    leaveClass: "flash"
+		        }
+		    }
+	    });
+	    
+    };
+	
+</script>
+</body>
+</html>

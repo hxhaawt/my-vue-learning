@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画 learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+
+<script type="x-templage" id="aaa">
+	<strong @click='change'>msg is: {{ msg }}</strong>
+	<ul>
+		<li v-for="val in arr">
+			{{ val }}
+		</li>
+	</ul>
+</script>
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    components:{
+		        'my-aaa':{
+		            data(){
+		                return {
+		                    msg: "hello world",
+			                arr: [11, 22, 33, 44 ,55]
+		                };
+		            },
+			        methods:{
+		                change(){
+		                    this.msg = "good men";
+		                }
+			        },
+		            template: "#aaa"
+		        }
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>

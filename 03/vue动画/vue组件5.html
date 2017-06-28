@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue动画 learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+<script>
+	
+	window.onload = function () {
+	    
+	    var Aaa = Vue.extend({
+		    data(){
+		        return {
+		            msg: "world"
+		        };
+		    },
+            template: "<h3>{{ msg }}</h3>"
+	    });
+	    
+	   
+	    
+	    let vm = new Vue({
+		    el: "#box",
+		    data: {
+		    },
+		    methods: {
+		    },
+            components: {    // 局部组件
+		        'my-aaa': Aaa
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>

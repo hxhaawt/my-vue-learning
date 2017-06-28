@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<input type="button" @click="a='aaa'" value="aaa组件">
+		<input type="button" @click="a='bbb'" value="bbb组件">
+		<component :is="a"></component>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    data: {
+		        a: 'aaa'
+		    
+		    },
+		    components:{
+		        'aaa':{
+		            template: '<h2>我是aaa</h2>'
+		        },
+			    'bbb':{
+		            template: '<h2>我是bbb</h2>'
+		        }
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>
