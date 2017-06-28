@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title> vue1.0 -- learn 自定义过渡器 </title>
+	
+</head>
+<body>
+
+	<div id="box" >
+		<input type="text" v-model="msg | filterHtml">
+		<br>
+		<div v-html="msg">
+		
+		</div>
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    Vue.filter("filterHtml", {
+	        ready: function (input) {   // model-->view
+                return input.replace(/<[^<]+>/g, "");
+            },
+		    write: function (input) {   // view-->model
+			    return input;
+            }
+		});
+	    
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+				msg: "<strong>welcome</strong>"
+		    
+		    },
+		    methods: {
+		    
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>

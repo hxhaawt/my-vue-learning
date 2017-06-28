@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title> vue1.0 -- learn 自定义过渡器 </title>
+	
+</head>
+<body>
+
+	<div id="box" >
+		<span v-red>
+			hello world
+		</span>
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+		Vue.directive("red", function () {
+			this.el.style.background = "red";
+        });
+		
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+				msg: "hello"
+		    
+		    },
+		    methods: {
+		    
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>

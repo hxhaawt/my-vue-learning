@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title> vue1.0 -- learn 自定义过渡器 </title>
+	<style>
+		zns-red{
+			width: 100px;
+			height: 100px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="box" >
+		<zns-red>
+			asddfe
+		</zns-red>
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+		Vue.elementDirective("zns-red", {
+		    bind: function () {
+			    this.el.style.background = "blue";
+            }
+		});
+		
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+		        a: "blue",
+				msg: "hello"
+		    
+		    },
+		    methods: {
+		    
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>

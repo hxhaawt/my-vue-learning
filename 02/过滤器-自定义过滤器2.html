@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title> vue1.0 -- learn 自定义过渡器 </title>
+	
+</head>
+<body>
+
+	<div id="box" v-text="a | date">
+		
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    Vue.filter("date", function (input) {
+	        
+	        var oDate = new Date(input);
+		    return ( oDate.getFullYear() + "-" + (oDate.getMonth() + 1) + "-" + oDate.getDate() + "-"
+		            + oDate.getHours() + ":" +oDate.getMinutes() + ":" + oDate.getSeconds());
+        });
+	    
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+		        // Date.now() 返回当前的时间戳 单位为 ms
+		        a: Date.now()
+		    
+		    },
+		    methods: {
+		        show: function () {
+			        alert(1);
+                }
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>

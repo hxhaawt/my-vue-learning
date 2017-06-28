@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue1.0 -- learn</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		<input type="text" @keyup="show | debounce 2000">
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+		    
+		    },
+		    methods: {
+		        show: function () {
+			        alert(1);
+                }
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>

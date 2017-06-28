@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue1.0 -- learn</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		<input type="text" v-model="a">
+		<ul>
+			<li v-for="val in arr | orderBy '0'">
+				{{ val }}
+			</li>
+		</ul>
+	</div>
+
+
+<script src="../vue.js"></script>
+<script>
+	
+	window.onload = function () {
+		
+	    var vm = new Vue({
+		    el: "#box",
+		    data:{
+		        a: "",
+		        arr: ["width", "height", "background", "orange"]
+		    
+		    },
+		    methods: {
+		        show: function () {
+			        alert(1);
+                }
+		    }
+	    });
+	    
+	    
+	    
+		
+	    
+	    
+	    
+	    
+	    
+    };
+	
+</script>
+</body>
+</html>
