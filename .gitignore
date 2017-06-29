@@ -9,4 +9,9 @@
 # my project files
 node_modules
 
-/03/vue-loader/node_modules/
+/03/vue-loader/node_modules
+
+/04/vue-loader-router-demo/node_modules
+
+
+
