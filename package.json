@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "animate.css": "^3.5.2",
-    "vue": "^1.0.28"
+    "vue": "^1.0.28",
+    "vue-router": "^0.7.13"
   }
 }

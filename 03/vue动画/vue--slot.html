@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue learn</title>
+	
+	<style>
+	
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<aaa>
+			<ul>
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+			</ul>
+		</aaa>
+		<aaa>
+		
+		</aaa>
+	</div>
+
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<template id="aaa">
+	<h1>111111111</h1>
+	<slot>这是默认情况</slot>
+	<p>welcome vue</p>
+</template>
+<script>
+	
+	window.onload = function () {
+		
+	    let vm = new Vue({
+		    el: "#box",
+		    data: {
+		        a: 'aaa'
+		    },
+		    components:{
+		        "aaa":{
+		            template: "#aaa"
+		        }
+		    }
+	    });
+	    
+	    
+	    
+	};
+	
+</script>
+</body>
+</html>

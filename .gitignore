@@ -5,10 +5,8 @@
 
 # IntelliJ project files
 .idea
-out
-gen
 
 # my project files
 node_modules
 
-
+/03/vue-loader/node_modules/
