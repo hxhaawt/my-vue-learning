@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue2.0 开始学习</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		{{ msg | currency }}
+	</div>
+	
+	
+
+<script src="vue2.0.js"></script>
+<script>
+	window.onload = function () {
+		
+	    Vue.config.keyCodes.ctrl = 17;
+	    
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        msg: 123
+		    },
+		    methods: {
+	
+		    }
+	    });
+
+
+    };
+</script>
+</body>
+</html>

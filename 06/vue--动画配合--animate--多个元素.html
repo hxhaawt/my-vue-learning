@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-transition 动画</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		p{
+			width: 200px;
+			height: 200px;
+			margin: 10px auto;
+			
+			background-color: blue;
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<input type="button" value="点击显示隐藏" @click="show = !show">
+		<transition-group
+				enter-active-class="zoomInLeft"
+				leave-active-class="bounceOutRight"
+		>
+			<p v-show="show" class="animated" :key="1"></p>
+			<p v-show="show" class="animated" :key="2"></p>
+		</transition-group>
+	</div>
+
+
+<script src="vue2.0.js"></script>
+<script>
+	
+	window.onload  = function () {
+		
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        show: false,
+			    
+		    },
+		    methods: {
+		    
+		    }
+	    });
+	    
+	    
+    };
+	
+	
+</script>
+</body>
+</html>

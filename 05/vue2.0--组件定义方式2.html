@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue2.0 开始学习</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		{{ msg }}
+		<my-aaa></my-aaa>
+		<my-aaa></my-aaa>
+	</div>
+	
+	
+
+<script src="vue2.0.js"></script>
+<script>
+	window.onload = function () {
+       //
+		let Home = {
+		    template: "<h2>vue2.0 组件定义</h2>"
+		};
+		
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        msg: 'welcome to vue2.0'
+		    },
+		    components: {
+		        'my-aaa': Home
+		    }
+		
+	    });
+
+
+    };
+</script>
+</body>
+</html>

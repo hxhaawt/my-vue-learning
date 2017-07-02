@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-transition 动画</title>
+	<style>
+		p{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<input type="button" value="点击显示隐藏" @click="show = !show">
+		<transition >
+			<p v-show="show"></p>
+		</transition>
+	</div>
+
+
+<script src="vue2.0.js"></script>
+<script>
+	
+	window.onload  = function () {
+		
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        show: true,
+			    
+		    }
+	    });
+	    
+	    
+    };
+	
+	
+</script>
+</body>
+</html>

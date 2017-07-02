@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue2.0 开始学习</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		{{ msg }}
+		<my-aaa></my-aaa>
+	</div>
+	
+	
+<template id="aaa">
+	<div>
+		<h2>我是组件</h2>
+		<strong>这是strong</strong>
+	</div>
+</template>
+
+<script src="vue2.0.js"></script>
+<script>
+	window.onload = function () {
+       
+        Vue.component('my-aaa', {
+            template: '#aaa'
+        });
+        
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        msg: 'welcome to vue2.0'
+		    }
+	    });
+
+
+    };
+</script>
+</body>
+</html>

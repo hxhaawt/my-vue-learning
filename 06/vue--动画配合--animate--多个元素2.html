@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-transition 动画</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+		p{
+			width: 200px;
+			height: 200px;
+			margin: 10px auto;
+			
+			background-color: blue;
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	<div id="box">
+		<input type="text" v-model="show">
+		<transition-group
+				enter-active-class="bounceInLeft"
+				leave-active-class="bounceOutRight"
+		>
+			<p v-show="show" class="animated" v-for="(val, index) in lists" :key="index">
+				{{ val }}
+			</p>
+		</transition-group>
+	</div>
+
+
+<script src="vue2.0.js"></script>
+<script>
+	
+	window.onload  = function () {
+		
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        show: '',
+			    list: ['apple', 'banana', 'per', 'origin']
+			    
+		    },
+		    computed: {
+		        lists: function () {
+		            let arr = [];
+		            this.list.forEach(function (val) {
+			            if ( val.indexOf(this.show) != -1 ){
+			                arr.push(val)
+			            }
+                    }.bind(this));
+		            
+			        return arr;
+                }
+		    },
+		    methods: {
+		    
+		    }
+	    });
+	    
+	    
+    };
+	
+	
+</script>
+</body>
+</html>

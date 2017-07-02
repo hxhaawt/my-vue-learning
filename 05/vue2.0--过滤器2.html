@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>vue2.0 开始学习</title>
+	
+</head>
+<body>
+
+	<div id="box">
+		{{ msg  }}
+	</div>
+	
+	
+
+<script src="vue2.0.js"></script>
+<script>
+	window.onload = function () {
+	    
+	    new Vue({
+		    el: '#box',
+		    data: {
+		        msg: {
+		            a: 11,
+			        b: 22
+		        }
+		    },
+		    methods: {
+	
+		    }
+	    });
+
+
+    };
+</script>
+</body>
+</html>
