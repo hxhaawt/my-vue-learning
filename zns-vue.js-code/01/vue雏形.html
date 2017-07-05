@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function(){
+            var c=new Vue({
+                el:'#box',
+                data:{
+                    msg:'welcome vue'
+                }
+            });
+
+            var myDiv_vm = new Vue({
+                el: ".my-div",
+                data: {
+                    text: "test data",
+                    name: "my-div",
+                    arr: ["one", "two", "three"],
+                    obj: {1:"a", 2:"b", 3:"c"}
+                },
+                methods: {
+                    show: function(){
+                        this.arr.push("four");
+                    }
+                }
+
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        {{msg}}
+        <br>
+        {{msg}}
+        <br>
+        <input type="text" name="testInput" v-model='msg'>
+    </div>
+
+    <div class="my-div"> 
+        {{text}}
+        <br>
+        {{name}}
+
+        <br>
+        {{arr}}
+
+        <br>
+        <ul>
+            <li v-for="value in arr">
+                {{value}} {{$index}}
+            </li>
+        </ul>
+
+        <ol>
+            <li v-for="value in obj">
+                {{value}} {{$index}} {{$key}}
+            </li>
+        </ol>
+        <button type="button" value="按键" v-on:mouseover="show">按键</button>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
